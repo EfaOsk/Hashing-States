@@ -10,5 +10,11 @@ public class Position {
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}
+	public int hashCode() {
+		return 0;
+	}
+	public boolean equals(Object o) {
+		return false;
+	}
 
 }

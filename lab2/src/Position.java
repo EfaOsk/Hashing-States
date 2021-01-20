@@ -10,11 +10,15 @@ public class Position {
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}
+	@Override
 	public int hashCode() {
-		return 0;
+		// Cantor pairing function
+		return ((x+y)*(x+y+1)/2+y);
 	}
+	@Override
 	public boolean equals(Object o) {
-		return false;
+		Position other = (Position) o;
+		return (other.x == this.x)&&(other.y == this.y);
 	}
 
 }

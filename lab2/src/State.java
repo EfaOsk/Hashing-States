@@ -21,8 +21,8 @@ public class State {
 	@Override
 	public boolean equals(Object o) {
 		if (o == this) { return true; }
-		if (o == null)  {return false; }
+		if(o == null || !(o instanceof State)) { return false; }
 		State other = (State) o;
-		return (other.position.equals(this.position))&& (other.orientation==this.orientation) && (other.turned_on == this.turned_on);
+		return (other.position.equals(position))&& (other.orientation==orientation) && (other.turned_on == turned_on);
 	}
 }

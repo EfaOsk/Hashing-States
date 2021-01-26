@@ -14,9 +14,11 @@ public class State {
 	}
 	@Override
 	public int hashCode() {
-		int x = position.hashCode(), y = orientation.hashCode();
-		int c = ((x+y)*(x+y+1)/2+y);
-		return (c+(turned_on ? 1231: 1237))*(c+(turned_on ? 83 : 89)+1)/2+(turned_on ? 83 : 97);
+		// hash of orientation
+		int o=  (int)(orientation.name().charAt(0) & 0xF);
+		int p = position.hashCode();
+		int c = ((p+o)*(p+o+1)/2+o);
+		return (c+(turned_on ? 1231: 1237))*(c+(turned_on ? 1231: 1237)+1)/2+(turned_on ? 1231: 1237);
 	}
 	@Override
 	public boolean equals(Object o) {
